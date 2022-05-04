@@ -9,6 +9,7 @@ import Signup from './Components/Pages/Login/Signup';
 import ManageItems from './Components/Pages/ManageItems/ManageItems';
 import MyItems from './Components/Pages/MyItems/MyItems';
 import Navbar from './Components/Shared/Navbar/Navbar';
+import InventoryDetails from "./Components/Pages/InventoryDetails/InventoryDetails"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/inventory/:id" element={< InventoryDetails></InventoryDetails>} />
         <Route path="/manage-items" element={<ManageItems />} />
         <Route path="/add-item" element={<AddItem />} />
         <Route path="/my-items" element={<MyItems />} /> 
