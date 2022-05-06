@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const InventoryCard = ({inventory}) => {
    
-    const {_id, img , disc, stock, brand,  name , sold, email} =inventory
+    const {_id, img , stock, brand,  name , sold, email ,type,fuel, condition} =inventory
    
     return (
         <div className='w-[390px]  '>
@@ -15,13 +15,11 @@ const InventoryCard = ({inventory}) => {
                <p className=" "> {name}</p>
            </div>
            <div className="flex items-center justify-start pl-3 h-[45px] border border-slate-200">
-               <p className='px-3 py-1 border-2 text-green-500 border-green-300 rounded'> new</p>
-               <p className='px-3 py-2'> Automated</p>
-               <p className='px-3 py-2'> Petrol</p>
+               <p className='px-3 py-1 border-2 text-green-500 border-green-300 rounded'> {condition}</p>
+               <p className='px-3 py-2'> {type}</p>
+               <p className='px-3 py-2'> {fuel}</p>
            </div>
-           <div className="h-[41px] flex items-center justify-start pl-3  border border-slate-200">
-               <p className=""> {disc} </p>
-           </div>
+           
            <div className="h-[41px] flex items-center justify-start pl-3  border border-slate-200">
                <p className=""> <span className="font-bold">Stock: </span> { stock} </p>
            </div>
