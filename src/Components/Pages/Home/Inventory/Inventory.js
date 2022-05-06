@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Inventory = ({inventory}) => {
-   
+   const {id}= useParams()
+   console.log(id)
     const {_id, img , disc, stock, brand, price, name} =inventory
     
    
     return (
         <div className='mt-10'>
+           
             <div className='h-25 w-[83.4px] border-[#F44617] border-2 '><p className='text-white fs-[14px] bg-[#F44617] py-[5px] px-[10px] '>featured</p></div>
             <div className='border-t-[#F44617] border-t-4  sm:flex'>
                 <div className='w-full sm:w-2/5 h-auto'> 

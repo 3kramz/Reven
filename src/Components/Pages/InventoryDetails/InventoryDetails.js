@@ -1,14 +1,31 @@
-import React from 'react';
-import {Link, useParams} from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams} from "react-router-dom";
 import useLoadData from "../../Shared/Hooks/useLoadData"
 
 const InventoryDetails = () => {
     const {id }=useParams()
+    const inventory = useLoadData(`https://guarded-ravine-66276.herokuapp.com/inventory/${id}`)
+   
+    const [data, setData]=useState({})
+    useEffect(()=>setData(inventory),[inventory])
+    let {_id,  name, img, disc, price, stock, condition, type, fuel, supplair, email, sold} =data
+   
+    const handleDalivered=()=>{
+       
+        if(stock===0){
+          stock= "Sold Out"
+          return
+        }
+       else if(stock>=1){
+            stock=stock-1
+            sold=sold+1
+        }
+        const data={...inventory, stock,sold}
+        setData(data)
+        console.log(data)
+    }
     
 
-    const inventory = useLoadData(`https://guarded-ravine-66276.herokuapp.com/inventory/${id}`)
-    const {_id, img , disc, stock, brand, price, name} =inventory
-  
     return (
         <div className='mt-10'>
             <div className='h-25 w-[83.4px] border-[#F44617] border-2 '><p className='text-white fs-[14px] bg-[#F44617] py-[5px] px-[10px] '>featured</p></div>
@@ -21,7 +38,7 @@ const InventoryDetails = () => {
                         
                         <p className=' flex items-center pl-5  text-[#F44617] '>{name}</p>
                         
-                        <Link to={ `/inventory/${_id}`}className=' flex items-center px-8 bg-[#F44617]  border-b-[#F44617]  text-white' > Update</Link>
+                        <button onClick={handleDalivered} className=' flex items-center px-8 bg-[#F44617]  border-b-[#F44617]  text-white' > Delivered</button>
 
 
                     </div>
@@ -29,7 +46,7 @@ const InventoryDetails = () => {
                         <p>{disc}</p>
                         <p className='font-bold'>Price: $ <span className='text-slate-600'>{price}</span></p>
                         <p className='font-bold'> Stock: {stock}</p>
-                        <p className='font-semibold text-rose-700'>{brand}</p>
+                        <p className='font-semibold text-rose-700'>{supplair}</p>
                     </div>
                   
                 </div>
