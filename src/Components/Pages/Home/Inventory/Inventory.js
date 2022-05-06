@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Inventory = ({inventory}) => {
    
-    const {id, img , disc, stock, brand, price, name} =inventory
+    const {_id, img , disc, stock, brand, price, name} =inventory
     
-
+   
     return (
         <div className='mt-10'>
             <div className='h-25 w-[83.4px] border-[#F44617] border-2 '><p className='text-white fs-[14px] bg-[#F44617] py-[5px] px-[10px] '>featured</p></div>
@@ -18,7 +18,7 @@ const Inventory = ({inventory}) => {
                         
                         <p className=' flex items-center pl-5  text-[#F44617] '>{name}</p>
                         
-                        <Link to={ `/inventory/${id}`}className=' flex items-center px-8 bg-[#F44617]  border-b-[#F44617]  text-white'> Update</Link>
+                        <Link to={ `/inventory/${_id}`}className=' flex items-center px-8 bg-[#F44617]  border-b-[#F44617]  text-white' > Update</Link>
 
 
                     </div>
