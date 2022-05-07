@@ -48,8 +48,7 @@ const InventoryDetails = () => {
     }
 
     const handleSaveBtn = e=>{
-
-        fetch(`http://localhost:5000/inventory/${id}`, {    
+        fetch(url, {    
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -58,9 +57,7 @@ const InventoryDetails = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log('success', data);
-            alert('users added successfully!!!');
-          
+           alert('users added successfully!!!');
         })
       
     }
