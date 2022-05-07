@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Link } from "react-router-dom";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -54,7 +55,7 @@ const ManageItems = () => {
                     {rows.map((row, i) => (
                         <TableRow key={row._id}  >
                             <TableCell align="left">{i+1}</TableCell>
-                            <TableCell align="left">{row.name}</TableCell>
+                            <TableCell as={Link} to={`/inventory/${row._id}`} align="left">{row.name}</TableCell>
                             <TableCell align="left">{row.email}</TableCell>
                             <TableCell align="left">{row.supplier}</TableCell>
                             <TableCell align="right">{row.price}</TableCell>
