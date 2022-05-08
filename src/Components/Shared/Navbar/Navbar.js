@@ -21,7 +21,7 @@ const Navbar = () => {
                    <Link to="/">RIVEN DRIVEN </Link>
                 </div >
 
-                <div className={` sm:flex justify-center  mx-auto sm:static gap-4 text-gray-900 bg-[#F46617]  text-xl font-lg absolute duration-300 ease-in ${open? "top-0":"top-[-120px] text-center"}` }>
+                <div className={` sm:flex justify-center  mx-auto sm:static gap-4 text-gray-900 bg-[#F46617]  text-xl font-lg absolute duration-300 ease-in ${open? "top-0":"top-[-200px] text-center"}` }>
                         <div>
                             {user?.emailVerified && <Link to="/manage-items">Manage Items </Link>}
                         </div>
