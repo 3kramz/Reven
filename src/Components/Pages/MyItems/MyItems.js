@@ -10,10 +10,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { IconButton, Tooltip } from '@mui/material';
 import useLoadData from '../../Shared/Hooks/useLoadData';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 
 const MyItems = () => {
-    const url='https://guarded-ravine-66276.herokuapp.com/manageInv'
+    const [user] = useAuthState(auth);
+    
+    const url=`https://guarded-ravine-66276.herokuapp.com/manageInv?email=${user.email}`
     const data= useLoadData(url)
    
     const [rows, setData]=useState([])

@@ -1,6 +1,7 @@
 
+import { Button } from '@mui/material';
 import React from 'react';
-import {  useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {  useSignInWithEmailAndPassword , useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
@@ -10,8 +11,16 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [ signInWithEmailAndPassword ]= useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     let from = location.state?.from?.pathname || "/";
    
+    const  handleSocialLogin=async ()=>{
+        
+        await signInWithGoogle()       
+        navigate(from, { replace: true })
+
+
+    }
 
     
     const handleSubmit = async event => {
@@ -40,6 +49,8 @@ const Login = () => {
              <input className='bg-[#F44617] w-full mb-2 py-4 text-white cursor-pointer' type="submit" value="Login" />
         </form>
         <p>Do not have any account? <Link className="text-[#F44617]" to={"/signup"}>Sign up</Link></p>
+        <hr/>
+        <Button onClick={handleSocialLogin} className="mt-5" variant="contained">Login with Google</Button>
         </div>
     );
 };

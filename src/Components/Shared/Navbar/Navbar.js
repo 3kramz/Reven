@@ -23,13 +23,22 @@ const Navbar = () => {
 
                 <div className={` sm:flex justify-center w-96 mx-auto sm:static gap-4 absolute duration-300 ease-in ${open? "top-0":"top-[-120px] text-center"}` }>
                         <div>
-                            <Link to="/manage-items">Manage Items </Link>
+                        {
+                               user?.emailVerified && <Link to="/manage-items">Manage Items </Link>
+                           }
+                            
                         </div>
                         <div>
-                            <Link to="/add-item">Add Item</Link>
+                            {
+                               user?.emailVerified && <Link to="/add-item">Add Item</Link>
+                           }
+                            
                         </div>
                         <div>
-                            <Link to="/my-items">My items</Link>
+                            {
+                               user?.emailVerified &&  <Link to="/my-items">My items</Link>
+                           }
+                           
                         </div>
                         <div>
                            {
