@@ -17,7 +17,7 @@ import auth from '../../../firebase.init';
 const MyItems = () => {
     const [user] = useAuthState(auth);
     
-    const url=`https://guarded-ravine-66276.herokuapp.com/manageInv?email=${user.email}`
+    const url=`https://guarded-ravine-66276.herokuapp.com/myItems?email=${user.email}`
     const data= useLoadData(url)
    
     const [rows, setData]=useState([])
