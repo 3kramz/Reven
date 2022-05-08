@@ -38,7 +38,7 @@ const AddItem = () => {
                 <p className="   py-10 ">Add New inventory</p>
             </div>
            
-            <form className=" container mx-auto " onSubmit={handlePlaceOrder}>
+             <form className=" container mx-auto " onSubmit={handlePlaceOrder}>
             
                 <input className=' w-full mb-2 border  rounded pl-4 py-2' type="text" name="name" placeholder='name' required />
                 <br />

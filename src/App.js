@@ -10,6 +10,7 @@ import ManageItems from './Components/Pages/ManageItems/ManageItems';
 import MyItems from './Components/Pages/MyItems/MyItems';
 import Navbar from './Components/Shared/Navbar/Navbar';
 import InventoryDetails from "./Components/Pages/InventoryDetails/InventoryDetails"
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signup" element={<Signup />} /> 
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

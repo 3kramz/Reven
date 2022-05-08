@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuIcon ,XIcon } from '@heroicons/react/solid'
+import auth from '../../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
     const [open, setOpen] = useState(false)
+    
     return (
         <div className='bg-gray-400/[.9] h-24 items-center flex  w-full sticky top-0'>
            
@@ -27,7 +32,9 @@ const Navbar = () => {
                             <Link to="/my-items">My items</Link>
                         </div>
                         <div>
-                            <Link to="/login">Login</Link>
+                           {
+                               user?.emailVerified? <p onClick={()=>signOut(auth)}> Sign  out</p>: <Link to="/login">Login</Link>
+                           }
                         </div>
                         
                 </div>

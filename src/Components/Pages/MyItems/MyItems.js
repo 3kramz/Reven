@@ -26,7 +26,7 @@ const MyItems = () => {
     }
 
     const handleDelete= (index, id)=>{
-        fetch(`https://guarded-ravine-66276.herokuapp.com/manage/${id}`, {
+        fetch(`https://guarded-ravine-66276.herokuapp.com/delete/${id}`, {
         method: 'DELETE',
         })
         .then(res => res.json())
