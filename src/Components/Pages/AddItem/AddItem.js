@@ -34,7 +34,7 @@ const AddItem = () => {
 
     return (
         <div >
-            <div className="container mx-auto font-5xl my-10 text-6xl text-[#F44617]">
+            <div className="container mx-auto font-5xl my-10 text-6xl text-[#F46617]">
                 <p className="   py-10 ">Add New inventory</p>
             </div>
            
@@ -62,7 +62,7 @@ const AddItem = () => {
                 <br />
                 <input className='    w-full mb-2 border  rounded pl-4 py-2' type="text" name="supplier" placeholder='suppleir' autoComplete='off' required />
                <br/>
-                <input className='bg-[#F44617] w-full mb-2 py-4 text-white cursor-pointer' type="submit" value="Place Inventory" />
+                <input className='bg-[#F46617] w-full mb-2 py-4 text-white cursor-pointer' type="submit" value="Place Inventory" />
             </form>
         </div>
     );

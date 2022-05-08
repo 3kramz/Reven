@@ -38,11 +38,11 @@ const MyItems = () => {
     }
     return (
         <div className='container mx-auto' >
-        <p className=' text-left my-5'> We have <span className=" text-[#F44617]  text-2xl px-2">{rows.length}</span> Vehicles availble.</p>
+        <p className=' text-left my-5'> We have <span className=" text-[#F46617]  text-2xl px-2">{rows.length}</span> Vehicles availble.</p>
          
              <TableContainer component={Paper}>
                <Table sx={{ minWidth: 500 }} size="small" aria-label="a dense table">
-                   <TableHead className='bg-[#F44617]  '>
+                   <TableHead className='bg-[#F46617]  '>
                        <TableRow className="">
                            <TableCell>No.</TableCell>
                            <TableCell>Name</TableCell>

@@ -10,18 +10,18 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
     
     return (
-        <div className='bg-[#F44617] h-24 items-center flex  w-full sticky top-0'>
+        <div className='bg-[#F46617] h-24 items-center flex  w-full sticky top-0'>
            
             <div className="w-6 h-6 sm:hidden " onClick={()=>setOpen(!open)}>
                {open? <XIcon></XIcon> : <MenuIcon></MenuIcon>}
             </div>
 
             <nav className="sm:flex justify-between  container mx-auto ">
-                <div>
+                <div className='font-black text-xl text-orange-200'>
                    <Link to="/">RIVEN DRIVEN </Link>
                 </div >
 
-                <div className={` sm:flex justify-center  mx-auto sm:static gap-4 bg-[#F44617]  text-xl font-lg absolute duration-300 ease-in ${open? "top-0":"top-[-120px] text-center"}` }>
+                <div className={` sm:flex justify-center  mx-auto sm:static gap-4 text-gray-900 bg-[#F46617]  text-xl font-lg absolute duration-300 ease-in ${open? "top-0":"top-[-120px] text-center"}` }>
                         <div>
                             {user?.emailVerified && <Link to="/manage-items">Manage Items </Link>}
                         </div>
@@ -30,6 +30,9 @@ const Navbar = () => {
                         </div>
                         <div>
                             {user?.emailVerified &&  <Link to="/my-items">My items</Link> }
+                        </div>
+                        <div>
+                            <Link to="/blogs">Blogs</Link> 
                         </div>
                         <div>
                            {user?.emailVerified? <p onClick={()=>signOut(auth)}> Sign  out</p>: <Link to="/login">Login</Link>}
