@@ -23,8 +23,7 @@ const InventoryDetails = () => {
         }
         const info ={...data, stock,sold}
         setData(info)
-        console.log(data)
-       
+        
     }
 
     const handleSubmit= e=>{

@@ -3,7 +3,7 @@ import useLoadData from '../../Shared/Hooks/useLoadData';
 
 const SectionTwo = () => {
     const imgs= useLoadData("data.json")
-    console.log(imgs)
+   
     return (
        <div className='container mx-auto mt-15'>
            <h2 className='text-5xl font-lg text-[#F46617]  '>Our Partners</h2>
